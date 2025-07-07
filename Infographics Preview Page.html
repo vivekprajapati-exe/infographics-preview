@@ -1,0 +1,3476 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Infographics</title>
+    <style>
+        html {
+            font-family: sans-serif;
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 0;
+            margin: 0;
+            background: #26272E;
+        }
+        h2 {
+            font-size: 32px;
+            margin: 0 0 15px 2%;
+            color: #ffffff;
+        }
+        p {
+            font-size: 16px;
+            font-weight: normal;
+            line-height: 1.5;
+            color: #ffffff;
+            margin: 0 0 0 0;
+            height: 20px;
+        }
+        img {
+            max-width: 101%;
+        }
+        hr {
+            display: block;
+            -webkit-margin-before: 0.5em;
+            -webkit-margin-after: 0.5em;
+            -webkit-margin-start: auto;
+            -webkit-margin-end: auto;
+            border-style: inset;
+            border: solid #dddddd;
+            border-width: 1px 0 0;
+        }
+        .subsection {
+            margin-left: 70px;
+            margin-top: 20px;
+        }
+
+        .subsection h3 {
+            font-size: 18px;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .subsection hr {
+            border-color: #5485C9;
+            margin-bottom: 50px;
+        }
+        #sidebar {
+            z-index: 999;
+            position: fixed;
+        }
+        .container {
+            width: 65%;
+            margin: 30px auto;
+            overflow: hidden;
+        }
+        #sidebar input#slide {
+            display: none;
+        }
+        #sidebar input#slide:checked ~ label.open {
+            color: #bdc3c7;
+        }
+        #sidebar #menu a span, #sidebar label {
+            -webkit-transition: all .2s ease-in-out;
+            -moz-transition: all .2s ease-in-out;
+            -ms-transition: all .2s ease-in-out;
+            -o-transition: all .2s ease-in-out;
+        }
+        #sidebar #menu {
+            position: absolute;
+            top: 50px;
+        }
+        #sidebar input#slide:checked ~ #menu a {
+            left: 0;
+        }
+        #sidebar #menu a {
+            display: block;
+            position: relative;
+            width: auto;
+            left: -110%;
+            text-decoration: none;
+            background-color: rgba(255, 255, 255, 0.16);
+            clear: both;
+            white-space: nowrap;
+            -webkit-backface-visibility: hidden;
+            -webkit-transform: translate3d(0,0,0);
+            -webkit-transition: left .4s cubic-bezier(.45,.25,.01,.92);
+            -moz-transition: left .4s cubic-bezier(.45,.25,.01,.92);
+            -ms-transition: left .4s cubic-bezier(.45,.25,.01,.92);
+            -o-transition: left .4s cubic-bezier(.45,.25,.01,.92);
+        }
+        #sidebar #menu a div.icon {
+            width: 40px;
+            text-align: center;
+            background: #5485C9;
+            color: #345E99;
+        }
+        #sidebar #menu a div.title {
+            font-family: sans-serif;
+            padding: 0 20px;
+            color: #ffffff;
+        }
+        #sidebar #menu a.active div.title,
+        #sidebar #menu a div.title:hover {
+            display: block;
+            color: #ecf0f1;
+            background: #5485C9;
+        }
+        #sidebar #menu a div.title,
+        #sidebar #menu a div.icon {
+            vertical-align: top;
+            height: 35px;
+            line-height: 35px;
+            display: inline-block;
+            font-size: 14px;
+        }
+
+        .large-12.columns {
+            width: 96%;
+            text-align: left;
+        }
+        .columns {
+            width: 30.33%;
+            margin:  2% 2% 2% 1%;
+            float: left;
+            text-align: center;
+        }
+
+        .flags-menu-item {
+            position: relative;
+        }
+        
+        .flags-submenu {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: 0;
+            width: 200px;
+            background-color: rgba(38, 39, 46, 0.95);
+            z-index: 1000;
+            border-left: 3px solid #5485C9;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        #sidebar input#slide:checked ~ #menu .flags-menu-item:hover .flags-submenu {
+            display: block;
+            opacity: 1;
+        }
+        
+        .flags-submenu a {
+            left: 0 !important;
+            background-color: rgba(255, 255, 255, 0.1) !important;
+            transition: background-color 0.2s ease;
+        }
+        
+        .flags-submenu a:hover {
+            background-color: #5485C9 !important;
+        }
+        
+        .flags-submenu .title {
+            padding-left: 15px !important;
+            font-size: 13px !important;
+        }
+        
+        .flags-menu-item > a::after {
+            content: "›";
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba(255,255,255,0.5);
+            font-size: 18px;
+        }
+        
+        .flags-menu-item:hover > a {
+            background-color: #5485C9 !important;
+        }
+
+        @media screen and (max-width: 1240px) {
+            .container {
+                width: 80%;
+                margin: 30px auto;
+            }
+            .columns {
+                width:20%;
+            }
+        }
+        @media screen and (max-width : 940px) {
+            .container {
+                width: 85%;
+                margin: 30px auto;
+            }
+            .columns {
+                width:29.33333%;
+            }
+        }
+        @media screen and (max-width : 720px) {
+            .container {
+                width: 90%;
+                margin: 20px auto;
+            }
+            .columns {
+                width: 46%;
+            }
+        }
+        @media screen and (max-width : 530px) {
+            .container {
+                width: 95%;
+                margin: 20px auto;
+            }
+            .columns {
+                width: 96%;
+            }
+        }
+        @media screen and (max-width : 320px) {
+            .container {
+                width: 100%;
+                margin: 10px auto;
+            }
+            .columns {
+                width: 96%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav id="sidebar">
+        <input id="slide" name="slide" type="checkbox" checked>
+        <label for="slide" class="icon open">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB0AAAAZCAYAAADNAiUZAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYxIDY0LjE0MDk0OSwgMjAxMC8xMi8wNy0xMDo1NzowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNS4xIE1hY2ludG9zaCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDoxQkJENUZCQUMyM0QxMUUyOTlFNEUyMTI3RkFFRDM2OCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDoxQkJENUZCQkMyM0QxMUUyOTlFNEUyMTI3RkFFRDM2OCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjFCQkQ1RkI4QzIzRDExRTI5OUU0RTIxMjdGQUVEMzY4IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjFCQkQ1RkI5QzIzRDExRTI5OUU0RTIxMjdGQUVEMzY4Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+43ragwAAAK5JREFUeNpinDlzZgIDA0M/EAsw0B48AOJAJjpaCAIKIPuY6GghHIAs/TAQli6gs50LWYBEIRBPhIY3rcEFUMiyIKWqB/QMXoaBiFO6A1jwOtDJPlBOucACLRwK6OjRRiY6WwgC9gOWkB7Q2U5wPg2Exiu9ElIjC7SUcBz2+XRklUgGQJxPx1oGnJDmQy2mBwAVtwpMdLQQBgQGLCFtoLOd4FomEYgP0rHduwAgwADxQR2CJ/blIQAAAABJRU5ErkJggg==" alt="Show/Hide menu">
+        </label>
+        <div id="menu">
+            <a href="#01. Counters">
+                <div class="title">01. Counters</div>
+            </a>
+            <a href="#02. Timers">
+                <div class="title">02. Timers</div>
+            </a>
+            <a href="#03. Social Media">
+                <div class="title">03. Social Media</div>
+            </a>
+            <a href="#04. Maps">
+                <div class="title">04. Maps</div>
+            </a>
+            <a href="#05. Planets">
+                <div class="title">05. Planets</div>
+            </a>
+            <a href="#06. Titles">
+                <div class="title">06. Titles</div>
+            </a>
+            <a href="#07. Call Outs">
+                <div class="title">07. Call Outs</div>
+            </a>
+            <a href="#08. Media Call Outs">
+                <div class="title">08. Media Call Outs</div>
+            </a>
+            <a href="#09. Diagrams">
+                <div class="title">09. Diagrams</div>
+            </a>
+            <a href="#10. Pie Charts">
+                <div class="title">10. Pie Charts</div>
+            </a>
+            <a href="#11. Line Charts">
+                <div class="title">11. Line Charts</div>
+            </a>
+            <a href="#12. Wave Charts">
+                <div class="title">12. Wave Charts</div>
+            </a>
+            <a href="#13. Bar Charts">
+                <div class="title">13. Bar Charts</div>
+            </a>
+            <a href="#14. Column Charts">
+                <div class="title">14. Column Charts</div>
+            </a>
+            <a href="#15. Icons">
+                <div class="title">15. Icons</div>
+            </a>
+            <div class="flags-menu-item">
+                <a href="#16. Flags">
+                    <div class="title">16. Flags</div>
+                </a>
+                <div class="flags-submenu">
+                    <a href="#16.1. Countries">
+                        <div class="title">16.1. Countries</div>
+                    </a>
+                    <a href="#16.2. US States">
+                        <div class="title">16.2. US States</div>
+                    </a>
+                    <a href="#16.3. Organizations">
+                        <div class="title">16.3. Organizations</div>
+                    </a>
+                </div>
+            </div>
+            <div class="flags-menu-item">
+                <a href="#17. Elements">
+                    <div class="title">17. Elements</div>
+                </a>
+                <div class="flags-submenu">
+                    <a href="#17.1. Counters Elements">
+                        <div class="title">17.1. Counters Elements</div>
+                    </a>
+                    <a href="#17.2. Percents Elements">
+                        <div class="title">17.2. Percents Elements</div>
+                    </a>
+                    <a href="#17.3. Timers Elements">
+                        <div class="title">17.3. Timers Elements</div>
+                    </a>
+                    <a href="#17.4. Pins">
+                        <div class="title">17.4. Pins</div>
+                    </a>
+                    <a href="#17.5. Glass BG">
+                        <div class="title">17.5. Glass BG</div>
+                    </a>
+                    <a href="#17.6. Miscellaneous">
+                        <div class="title">17.6. Miscellaneous</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+<div class="container">  
+
+    
+    <div class="row">
+    <div class="large-12 columns">
+            <div class="section" id="01. Counters">
+           <h2>01. Counters</h2> 
+            <hr>
+            </div>
+        </div> 
+    </div>
+    
+        <div class="row">
+                    <div class="large-4 columns">
+                        <img src="./GIF/01. Counters/Counter_01.gif">
+                        <p align="center">Counter 01</p>
+                   </div>
+
+                    <div class="large-4 columns">
+                        <img src="./GIF/01. Counters/Counter_02.gif">
+                        <p align="center">Counter 02</p> 
+                   </div>
+
+                    <div class="large-4 columns">
+                        <img src="./GIF/01. Counters/Counter_03.gif">
+                        <p align="center">Counter 03</p> 
+                   </div>
+
+                    <div class="large-4 columns">
+                        <img src="./GIF/01. Counters/Counter_04.gif">
+                        <p align="center">Counter 04</p> 
+                   </div>
+
+                    <div class="large-4 columns">
+                        <img src="./GIF/01. Counters/Counter_05.gif">
+                        <p align="center">Counter 05</p> 
+                   </div>
+        </div>
+
+    <div class="row">
+    <div class="large-12 columns">
+            <div class="section" id="02. Timers">
+           <h2>02. Timers</h2> 
+            <hr>
+            </div>
+        </div> 
+    </div>
+    
+        <div class="row">
+                    <div class="large-4 columns">
+                        <img src="./GIF/02. Timers/Timer_01.gif">
+                        <p align="center">Timer 01</p>
+                   </div>
+
+                    <div class="large-4 columns">
+                        <img src="./GIF/02. Timers/Timer_02.gif">
+                        <p align="center">Timer 02</p> 
+                   </div>
+
+                    <div class="large-4 columns">
+                        <img src="./GIF/02. Timers/Timer_03.gif">
+                        <p align="center">Timer 03</p> 
+                   </div>
+
+                    <div class="large-4 columns">
+                        <img src="./GIF/02. Timers/Timer_04.gif">
+                        <p align="center">Timer 04</p> 
+                   </div>
+
+                    <div class="large-4 columns">
+                        <img src="./GIF/02. Timers/Timer_05.gif">
+                        <p align="center">Timer 05</p> 
+                   </div>
+
+                    <div class="large-4 columns">
+                        <img src="./GIF/02. Timers/Timer_06.gif">
+                        <p align="center">Timer 06</p> 
+                   </div>
+        </div>
+
+    <div class="row">
+    <div class="large-12 columns">
+            <div class="section" id="03. Social Media">
+           <h2>03. Social Media</h2> 
+            <hr>
+            </div>
+        </div> 
+    </div>
+    
+        <div class="row">
+                    <div class="large-4 columns">
+                        <img src="./GIF/03. Social Media/Social_Media_01.gif">
+                        <p align="center">Social Media 01</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/03. Social Media/Social_Media_02.gif">
+                        <p align="center">Social Media 02</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/03. Social Media/Social_Media_03.gif">
+                        <p align="center">Social Media 03</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/03. Social Media/Social_Media_04.gif">
+                        <p align="center">Social Media 04</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/03. Social Media/Social_Media_05.gif">
+                        <p align="center">Social Media 05</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/03. Social Media/Social_Media_06.gif">
+                        <p align="center">Social Media 06</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/03. Social Media/Social_Media_07.gif">
+                        <p align="center">Social Media 07</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/03. Social Media/Social_Media_08.gif">
+                        <p align="center">Social Media 08</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/03. Social Media/Social_Media_09.gif">
+                        <p align="center">Social Media 09</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/03. Social Media/Social_Media_10.gif">
+                        <p align="center">Social Media 10</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/03. Social Media/Social_Media_11.gif">
+                        <p align="center">Social Media 11</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/03. Social Media/Social_Media_12.gif">
+                        <p align="center">Social Media 12</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/03. Social Media/Social_Media_13.gif">
+                        <p align="center">Social Media 13</p>
+                   </div>
+        </div>
+
+    <div class="row">
+    <div class="large-12 columns">
+            <div class="section" id="04. Maps">
+           <h2>04. Maps</h2> 
+            <hr>
+            </div>
+        </div> 
+    </div>
+    
+        <div class="row">
+                    <div class="large-4 columns">
+                        <img src="./GIF/04. Maps/Map_01.gif">
+                        <p align="center">Map 01</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/04. Maps/Map_02.gif">
+                        <p align="center">Map 02</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/04. Maps/Map_03.gif">
+                        <p align="center">Map 03</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/04. Maps/Map_04.gif">
+                        <p align="center">Map 04</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/04. Maps/Map_05.gif">
+                        <p align="center">Map 05</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/04. Maps/Map_06.gif">
+                        <p align="center">Map 06</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/04. Maps/Map_07.gif">
+                        <p align="center">Map 07</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/04. Maps/Map_08.gif">
+                        <p align="center">Map 08</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/04. Maps/Map_09.gif">
+                        <p align="center">Map 09</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/04. Maps/Map_10.gif">
+                        <p align="center">Map 10</p>
+                   </div>
+        </div>
+
+    <div class="row">
+    <div class="large-12 columns">
+            <div class="section" id="05. Planets">
+           <h2>05. Planets</h2> 
+            <hr>
+            </div>
+        </div> 
+    </div>
+    
+        <div class="row">
+                    <div class="large-4 columns">
+                        <img src="./GIF/05. Planets/Planet_01.gif">
+                        <p align="center">Planet 01</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/05. Planets/Planet_02.gif">
+                        <p align="center">Planet 02</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/05. Planets/Planet_03.gif">
+                        <p align="center">Planet 03</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/05. Planets/Planet_04.gif">
+                        <p align="center">Planet 04</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/05. Planets/Planet_05.gif">
+                        <p align="center">Planet 05</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/05. Planets/Planet_06.gif">
+                        <p align="center">Planet 06</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/05. Planets/Planet_07.gif">
+                        <p align="center">Planet 07</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/05. Planets/Planet_08.gif">
+                        <p align="center">Planet 08</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/05. Planets/Planet_09.gif">
+                        <p align="center">Planet 09</p>
+                   </div>
+        </div>
+
+    <div class="row">
+    <div class="large-12 columns">
+            <div class="section" id="06. Titles">
+           <h2>06. Titles</h2> 
+            <hr>
+            </div>
+        </div> 
+    </div>
+    
+        <div class="row">
+                    <div class="large-4 columns">
+                        <img src="./GIF/06. Titles/Title_01.gif">
+                        <p align="center">Title 01</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/06. Titles/Title_02.gif">
+                        <p align="center">Title 02</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/06. Titles/Title_03.gif">
+                        <p align="center">Title 03</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/06. Titles/Title_04.gif">
+                        <p align="center">Title 04</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/06. Titles/Title_05.gif">
+                        <p align="center">Title 05</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/06. Titles/Title_06.gif">
+                        <p align="center">Title 06</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/06. Titles/Title_07.gif">
+                        <p align="center">Title 07</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/06. Titles/Title_08.gif">
+                        <p align="center">Title 08</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/06. Titles/Title_09.gif">
+                        <p align="center">Title 09</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/06. Titles/Title_10.gif">
+                        <p align="center">Title 10</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/06. Titles/Title_11.gif">
+                        <p align="center">Title 11</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/06. Titles/Title_12.gif">
+                        <p align="center">Title 12</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/06. Titles/Title_13.gif">
+                        <p align="center">Title 13</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/06. Titles/Title_14.gif">
+                        <p align="center">Title 14</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/06. Titles/Title_15.gif">
+                        <p align="center">Title 15</p>
+                   </div>
+        </div>
+
+    <div class="row">
+    <div class="large-12 columns">
+            <div class="section" id="07. Call Outs">
+           <h2>07. Call Outs</h2> 
+            <hr>
+            </div>
+        </div> 
+    </div>
+    
+        <div class="row">
+                    <div class="large-4 columns">
+                        <img src="./GIF/07. Call Outs/Call_Out_01L.gif">
+                        <p align="center">Call Out 01L</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/07. Call Outs/Call_Out_01R.gif">
+                        <p align="center">Call Out 01R</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/07. Call Outs/Call_Out_02L.gif">
+                        <p align="center">Call Out 02L</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/07. Call Outs/Call_Out_02R.gif">
+                        <p align="center">Call Out 02R</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/07. Call Outs/Call_Out_03L.gif">
+                        <p align="center">Call Out 03L</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/07. Call Outs/Call_Out_03R.gif">
+                        <p align="center">Call Out 03R</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/07. Call Outs/Call_Out_04L.gif">
+                        <p align="center">Call Out 04L</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/07. Call Outs/Call_Out_04R.gif">
+                        <p align="center">Call Out 04R</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/07. Call Outs/Call_Out_05L.gif">
+                        <p align="center">Call Out 05L</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/07. Call Outs/Call_Out_05R.gif">
+                        <p align="center">Call Out 05R</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/07. Call Outs/Call_Out_06L.gif">
+                        <p align="center">Call Out 06L</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/07. Call Outs/Call_Out_06R.gif">
+                        <p align="center">Call Out 06R</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/07. Call Outs/Call_Out_07L.gif">
+                        <p align="center">Call Out 07L</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/07. Call Outs/Call_Out_07R.gif">
+                        <p align="center">Call Out 07R</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/07. Call Outs/Call_Out_08L.gif">
+                        <p align="center">Call Out 08L</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/07. Call Outs/Call_Out_08R.gif">
+                        <p align="center">Call Out 08R</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/07. Call Outs/Call_Out_09.gif">
+                        <p align="center">Call Out 09</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/07. Call Outs/Call_Out_10.gif">
+                        <p align="center">Call Out 10</p>
+                   </div>
+        </div>
+
+    <div class="row">
+    <div class="large-12 columns">
+            <div class="section" id="08. Media Call Outs">
+           <h2>08. Media Call Outs</h2> 
+            <hr>
+            </div>
+        </div> 
+    </div>
+    
+        <div class="row">
+                    <div class="large-4 columns">
+                        <img src="./GIF/08. Media Call Outs/Media_Call_Out_01L.gif">
+                        <p align="center">Media Call Out 01L</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/08. Media Call Outs/Media_Call_Out_01R.gif">
+                        <p align="center">Media Call Out 01R</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/08. Media Call Outs/Media_Call_Out_02L.gif">
+                        <p align="center">Media Call Out 02L</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/08. Media Call Outs/Media_Call_Out_02R.gif">
+                        <p align="center">Media Call Out 02R</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/08. Media Call Outs/Media_Call_Out_03L.gif">
+                        <p align="center">Media Call Out 03L</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/08. Media Call Outs/Media_Call_Out_03R.gif">
+                        <p align="center">Media Call Out 03R</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/08. Media Call Outs/Media_Call_Out_04L.gif">
+                        <p align="center">Media Call Out 04L</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/08. Media Call Outs/Media_Call_Out_04R.gif">
+                        <p align="center">Media Call Out 04R</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/08. Media Call Outs/Media_Call_Out_05L.gif">
+                        <p align="center">Media Call Out 05L</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/08. Media Call Outs/Media_Call_Out_05R.gif">
+                        <p align="center">Media Call Out 05R</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/08. Media Call Outs/Media_Call_Out_06L.gif">
+                        <p align="center">Media Call Out 06L</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/08. Media Call Outs/Media_Call_Out_06R.gif">
+                        <p align="center">Media Call Out 06R</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/08. Media Call Outs/Media_Call_Out_07D.gif">
+                        <p align="center">Media Call Out 07D</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/08. Media Call Outs/Media_Call_Out_07U.gif">
+                        <p align="center">Media Call Out 07U</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/08. Media Call Outs/Media_Call_Out_08L.gif">
+                        <p align="center">Media Call Out 08L</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/08. Media Call Outs/Media_Call_Out_08R.gif">
+                        <p align="center">Media Call Out 08R</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/08. Media Call Outs/Media_Call_Out_09L.gif">
+                        <p align="center">Media Call Out 09L</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/08. Media Call Outs/Media_Call_Out_09R.gif">
+                        <p align="center">Media Call Out 09R</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/08. Media Call Outs/Media_Call_Out_10L.gif">
+                        <p align="center">Media Call Out 10L</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/08. Media Call Outs/Media_Call_Out_10R.gif">
+                        <p align="center">Media Call Out 10R</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/08. Media Call Outs/Media_Call_Out_11L.gif">
+                        <p align="center">Media Call Out 11L</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/08. Media Call Outs/Media_Call_Out_11R.gif">
+                        <p align="center">Media Call Out 11R</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/08. Media Call Outs/Media_Call_Out_12L.gif">
+                        <p align="center">Media Call Out 12L</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/08. Media Call Outs/Media_Call_Out_12R.gif">
+                        <p align="center">Media Call Out 12R</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/08. Media Call Outs/Media_Call_Out_13L.gif">
+                        <p align="center">Media Call Out 13L</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/08. Media Call Outs/Media_Call_Out_13R.gif">
+                        <p align="center">Media Call Out 13R</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/08. Media Call Outs/Media_Call_Out_14L.gif">
+                        <p align="center">Media Call Out 14L</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/08. Media Call Outs/Media_Call_Out_14R.gif">
+                        <p align="center">Media Call Out 14R</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/08. Media Call Outs/Media_Call_Out_15L.gif">
+                        <p align="center">Media Call Out 15L</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/08. Media Call Outs/Media_Call_Out_15R.gif">
+                        <p align="center">Media Call Out 15R</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/08. Media Call Outs/Media_Call_Out_16L.gif">
+                        <p align="center">Media Call Out 16L</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/08. Media Call Outs/Media_Call_Out_16R.gif">
+                        <p align="center">Media Call Out 16R</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/08. Media Call Outs/Media_Call_Out_17L.gif">
+                        <p align="center">Media Call Out 17L</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/08. Media Call Outs/Media_Call_Out_17R.gif">
+                        <p align="center">Media Call Out 17R</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/08. Media Call Outs/Media_Call_Out_18L.gif">
+                        <p align="center">Media Call Out 18L</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/08. Media Call Outs/Media_Call_Out_18R.gif">
+                        <p align="center">Media Call Out 18R</p>
+                   </div>
+        </div>
+
+    <div class="row">
+    <div class="large-12 columns">
+            <div class="section" id="09. Diagrams">
+           <h2>09. Diagrams</h2> 
+            <hr>
+            </div>
+        </div> 
+    </div>
+    
+        <div class="row">
+                    <div class="large-4 columns">
+                        <img src="./GIF/09. Diagrams/Diagram_01.gif">
+                        <p align="center">Diagram 01</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/09. Diagrams/Diagram_02.gif">
+                        <p align="center">Diagram 02</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/09. Diagrams/Diagram_03.gif">
+                        <p align="center">Diagram 03</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/09. Diagrams/Diagram_04.gif">
+                        <p align="center">Diagram 04</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/09. Diagrams/Diagram_05.gif">
+                        <p align="center">Diagram 05</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/09. Diagrams/Diagram_06.gif">
+                        <p align="center">Diagram 06</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/09. Diagrams/Diagram_07.gif">
+                        <p align="center">Diagram 07</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/09. Diagrams/Diagram_08.gif">
+                        <p align="center">Diagram 08</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/09. Diagrams/Diagram_09.gif">
+                        <p align="center">Diagram 09</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/09. Diagrams/Diagram_10.gif">
+                        <p align="center">Diagram 10</p>
+                   </div>
+        </div>
+
+
+    <div class="row">
+    <div class="large-12 columns">
+            <div class="section" id="10. Pie Charts">
+           <h2>10. Pie Charts</h2> 
+            <hr>
+            </div>
+        </div> 
+    </div>
+    
+        <div class="row">
+                    <div class="large-4 columns">
+                        <img src="./GIF/10. Pie Charts/Pie_Chart_01.gif">
+                        <p align="center">Pie Chart 01</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/10. Pie Charts/Pie_Chart_02.gif">
+                        <p align="center">Pie Chart 02</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/10. Pie Charts/Pie_Chart_03.gif">
+                        <p align="center">Pie Chart 03</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/10. Pie Charts/Pie_Chart_04.gif">
+                        <p align="center">Pie Chart 04</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/10. Pie Charts/Pie_Chart_05.gif">
+                        <p align="center">Pie Chart 05</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/10. Pie Charts/Pie_Chart_06.gif">
+                        <p align="center">Pie Chart 06</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/10. Pie Charts/Pie_Chart_07.gif">
+                        <p align="center">Pie Chart 07</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/10. Pie Charts/Pie_Chart_08.gif">
+                        <p align="center">Pie Chart 08</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/10. Pie Charts/Pie_Chart_09.gif">
+                        <p align="center">Pie Chart 09</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/10. Pie Charts/Pie_Chart_10.gif">
+                        <p align="center">Pie Chart 10</p>
+                   </div>
+        </div>
+
+    <div class="row">
+    <div class="large-12 columns">
+            <div class="section" id="11. Line Charts">
+           <h2>11. Line Charts</h2> 
+            <hr>
+            </div>
+        </div> 
+    </div>
+    
+        <div class="row">
+                    <div class="large-4 columns">
+                        <img src="./GIF/11. Line Charts/Line_Chart_01.gif">
+                        <p align="center">Line Chart 01</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/11. Line Charts/Line_Chart_02.gif">
+                        <p align="center">Line Chart 02</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/11. Line Charts/Line_Chart_03.gif">
+                        <p align="center">Line Chart 03</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/11. Line Charts/Line_Chart_04.gif">
+                        <p align="center">Line Chart 04</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/11. Line Charts/Line_Chart_05.gif">
+                        <p align="center">Line Chart 05</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/11. Line Charts/Line_Chart_06.gif">
+                        <p align="center">Line Chart 06</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/11. Line Charts/Line_Chart_07.gif">
+                        <p align="center">Line Chart 07</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/11. Line Charts/Line_Chart_08.gif">
+                        <p align="center">Line Chart 08</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/11. Line Charts/Line_Chart_09.gif">
+                        <p align="center">Line Chart 09</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/11. Line Charts/Line_Chart_10.gif">
+                        <p align="center">Line Chart 10</p>
+                   </div>
+        </div>
+
+    <div class="row">
+    <div class="large-12 columns">
+            <div class="section" id="12. Wave Charts">
+           <h2>12. Wave Charts</h2> 
+            <hr>
+            </div>
+        </div> 
+    </div>
+    
+        <div class="row">
+                    <div class="large-4 columns">
+                        <img src="./GIF/12. Wave Charts/Wave_Chart_01.gif">
+                        <p align="center">Wave Chart 01</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/12. Wave Charts/Wave_Chart_02.gif">
+                        <p align="center">Wave Chart 02</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/12. Wave Charts/Wave_Chart_03.gif">
+                        <p align="center">Wave Chart 03</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/12. Wave Charts/Wave_Chart_04.gif">
+                        <p align="center">Wave Chart 04</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/12. Wave Charts/Wave_Chart_05.gif">
+                        <p align="center">Wave Chart 05</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/12. Wave Charts/Wave_Chart_06.gif">
+                        <p align="center">Wave Chart 06</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/12. Wave Charts/Wave_Chart_07.gif">
+                        <p align="center">Wave Chart 07</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/12. Wave Charts/Wave_Chart_08.gif">
+                        <p align="center">Wave Chart 08</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/12. Wave Charts/Wave_Chart_09.gif">
+                        <p align="center">Wave Chart 09</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/12. Wave Charts/Wave_Chart_10.gif">
+                        <p align="center">Wave Chart 10</p>
+                   </div>
+        </div>
+
+    <div class="row">
+    <div class="large-12 columns">
+            <div class="section" id="13. Bar Charts">
+           <h2>13. Bar Charts</h2> 
+            <hr>
+            </div>
+        </div> 
+    </div>
+    
+        <div class="row">
+                    <div class="large-4 columns">
+                        <img src="./GIF/13. Bar Charts/Bar_Chart_01.gif">
+                        <p align="center">Bar Chart 01</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/13. Bar Charts/Bar_Chart_02.gif">
+                        <p align="center">Bar Chart 02</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/13. Bar Charts/Bar_Chart_03.gif">
+                        <p align="center">Bar Chart 03</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/13. Bar Charts/Bar_Chart_04.gif">
+                        <p align="center">Bar Chart 04</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/13. Bar Charts/Bar_Chart_05.gif">
+                        <p align="center">Bar Chart 05</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/13. Bar Charts/Bar_Chart_06.gif">
+                        <p align="center">Bar Chart 06</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/13. Bar Charts/Bar_Chart_07.gif">
+                        <p align="center">Bar Chart 07</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/13. Bar Charts/Bar_Chart_08.gif">
+                        <p align="center">Bar Chart 08</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/13. Bar Charts/Bar_Chart_09.gif">
+                        <p align="center">Bar Chart 09</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/13. Bar Charts/Bar_Chart_10.gif">
+                        <p align="center">Bar Chart 10</p>
+                   </div>
+        </div>
+
+    <div class="row">
+    <div class="large-12 columns">
+            <div class="section" id="14. Column Charts">
+           <h2>14. Column Charts</h2> 
+            <hr>
+            </div>
+        </div> 
+    </div>
+    
+        <div class="row">
+                    <div class="large-4 columns">
+                        <img src="./GIF/14. Column Charts/Column_Chart_01.gif">
+                        <p align="center">Column Chart 01</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/14. Column Charts/Column_Chart_02.gif">
+                        <p align="center">Column Chart 02</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/14. Column Charts/Column_Chart_03.gif">
+                        <p align="center">Column Chart 03</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/14. Column Charts/Column_Chart_04.gif">
+                        <p align="center">Column Chart 04</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/14. Column Charts/Column_Chart_05.gif">
+                        <p align="center">Column Chart 05</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/14. Column Charts/Column_Chart_06.gif">
+                        <p align="center">Column Chart 06</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/14. Column Charts/Column_Chart_07.gif">
+                        <p align="center">Column Chart 07</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/14. Column Charts/Column_Chart_08.gif">
+                        <p align="center">Column Chart 08</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/14. Column Charts/Column_Chart_09.gif">
+                        <p align="center">Column Chart 09</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/14. Column Charts/Column_Chart_10.gif">
+                        <p align="center">Column Chart 10</p>
+                   </div>
+        </div>
+
+    <div class="row">
+    <div class="large-12 columns">
+            <div class="section" id="15. Icons">
+           <h2>15. Icons</h2> 
+            <hr>
+            </div>
+        </div> 
+    </div>
+    
+        <div class="row">
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_001.gif">
+                        <p align="center">Icon 001</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_002.gif">
+                        <p align="center">Icon 002</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_003.gif">
+                        <p align="center">Icon 003</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_004.gif">
+                        <p align="center">Icon 004</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_005.gif">
+                        <p align="center">Icon 005</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_006.gif">
+                        <p align="center">Icon 006</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_007.gif">
+                        <p align="center">Icon 007</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_008.gif">
+                        <p align="center">Icon 008</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_009.gif">
+                        <p align="center">Icon 009</p>
+                   </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_010.gif">
+                        <p align="center">Icon 010</p>
+                   </div>
+                       <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_011.gif">
+                      <p align="center">Icon 011</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_012.gif">
+                        <p align="center">Icon 012</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_013.gif">
+                        <p align="center">Icon 013</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_014.gif">
+                        <p align="center">Icon 014</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_015.gif">
+                        <p align="center">Icon 015</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_016.gif">
+                        <p align="center">Icon 016</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_017.gif">
+                        <p align="center">Icon 017</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_018.gif">
+                        <p align="center">Icon 018</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_019.gif">
+                        <p align="center">Icon 019</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_020.gif">
+                        <p align="center">Icon 020</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_021.gif">
+                        <p align="center">Icon 021</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_022.gif">
+                        <p align="center">Icon 022</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_023.gif">
+                        <p align="center">Icon 023</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_024.gif">
+                        <p align="center">Icon 024</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_025.gif">
+                        <p align="center">Icon 025</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_026.gif">
+                        <p align="center">Icon 026</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_027.gif">
+                        <p align="center">Icon 027</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_028.gif">
+                        <p align="center">Icon 028</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_029.gif">
+                        <p align="center">Icon 029</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_030.gif">
+                        <p align="center">Icon 030</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_031.gif">
+                        <p align="center">Icon 031</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_032.gif">
+                        <p align="center">Icon 032</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_033.gif">
+                        <p align="center">Icon 033</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_034.gif">
+                        <p align="center">Icon 034</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_035.gif">
+                        <p align="center">Icon 035</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_036.gif">
+                        <p align="center">Icon 036</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_037.gif">
+                        <p align="center">Icon 037</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_038.gif">
+                        <p align="center">Icon 038</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_039.gif">
+                        <p align="center">Icon 039</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_040.gif">
+                        <p align="center">Icon 040</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_041.gif">
+                        <p align="center">Icon 041</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_042.gif">
+                        <p align="center">Icon 042</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_043.gif">
+                        <p align="center">Icon 043</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_044.gif">
+                        <p align="center">Icon 044</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_045.gif">
+                        <p align="center">Icon 045</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_046.gif">
+                        <p align="center">Icon 046</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_047.gif">
+                        <p align="center">Icon 047</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_048.gif">
+                        <p align="center">Icon 048</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_049.gif">
+                        <p align="center">Icon 049</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_050.gif">
+                        <p align="center">Icon 050</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_051.gif">
+                        <p align="center">Icon 051</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_052.gif">
+                        <p align="center">Icon 052</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_053.gif">
+                        <p align="center">Icon 053</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_054.gif">
+                        <p align="center">Icon 054</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_055.gif">
+                        <p align="center">Icon 055</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_056.gif">
+                        <p align="center">Icon 056</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_057.gif">
+                        <p align="center">Icon 057</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_058.gif">
+                        <p align="center">Icon 058</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_059.gif">
+                        <p align="center">Icon 059</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_060.gif">
+                        <p align="center">Icon 060</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_061.gif">
+                        <p align="center">Icon 061</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_062.gif">
+                        <p align="center">Icon 062</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_063.gif">
+                        <p align="center">Icon 063</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_064.gif">
+                        <p align="center">Icon 064</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_065.gif">
+                        <p align="center">Icon 065</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_066.gif">
+                        <p align="center">Icon 066</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_067.gif">
+                        <p align="center">Icon 067</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_068.gif">
+                        <p align="center">Icon 068</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_069.gif">
+                        <p align="center">Icon 069</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_070.gif">
+                        <p align="center">Icon 070</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_071.gif">
+                        <p align="center">Icon 071</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_072.gif">
+                        <p align="center">Icon 072</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_073.gif">
+                        <p align="center">Icon 073</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_074.gif">
+                        <p align="center">Icon 074</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_075.gif">
+                        <p align="center">Icon 075</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_076.gif">
+                        <p align="center">Icon 076</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_077.gif">
+                        <p align="center">Icon 077</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_078.gif">
+                        <p align="center">Icon 078</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_079.gif">
+                        <p align="center">Icon 079</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_080.gif">
+                        <p align="center">Icon 080</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_081.gif">
+                        <p align="center">Icon 081</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_082.gif">
+                        <p align="center">Icon 082</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_083.gif">
+                        <p align="center">Icon 083</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_084.gif">
+                        <p align="center">Icon 084</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_085.gif">
+                        <p align="center">Icon 085</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_086.gif">
+                        <p align="center">Icon 086</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_087.gif">
+                        <p align="center">Icon 087</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_088.gif">
+                        <p align="center">Icon 088</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_089.gif">
+                        <p align="center">Icon 089</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_090.gif">
+                        <p align="center">Icon 090</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_091.gif">
+                        <p align="center">Icon 091</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_092.gif">
+                        <p align="center">Icon 092</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_093.gif">
+                        <p align="center">Icon 093</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_094.gif">
+                        <p align="center">Icon 094</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_095.gif">
+                        <p align="center">Icon 095</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_096.gif">
+                        <p align="center">Icon 096</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_097.gif">
+                        <p align="center">Icon 097</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_098.gif">
+                        <p align="center">Icon 098</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_099.gif">
+                        <p align="center">Icon 099</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_100.gif">
+                        <p align="center">Icon 100</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_101.gif">
+                        <p align="center">Icon 101</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_102.gif">
+                        <p align="center">Icon 102</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_103.gif">
+                        <p align="center">Icon 103</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_104.gif">
+                        <p align="center">Icon 104</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_105.gif">
+                        <p align="center">Icon 105</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_106.gif">
+                        <p align="center">Icon 106</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_107.gif">
+                        <p align="center">Icon 107</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_108.gif">
+                        <p align="center">Icon 108</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_109.gif">
+                        <p align="center">Icon 109</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_110.gif">
+                        <p align="center">Icon 110</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_111.gif">
+                        <p align="center">Icon 111</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_112.gif">
+                        <p align="center">Icon 112</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_113.gif">
+                        <p align="center">Icon 113</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_114.gif">
+                        <p align="center">Icon 114</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_115.gif">
+                        <p align="center">Icon 115</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_116.gif">
+                        <p align="center">Icon 116</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_117.gif">
+                        <p align="center">Icon 117</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_118.gif">
+                        <p align="center">Icon 118</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_119.gif">
+                        <p align="center">Icon 119</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_120.gif">
+                        <p align="center">Icon 120</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_121.gif">
+                        <p align="center">Icon 121</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_122.gif">
+                        <p align="center">Icon 122</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_123.gif">
+                        <p align="center">Icon 123</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_124.gif">
+                        <p align="center">Icon 124</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_125.gif">
+                        <p align="center">Icon 125</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_126.gif">
+                        <p align="center">Icon 126</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_127.gif">
+                        <p align="center">Icon 127</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_128.gif">
+                        <p align="center">Icon 128</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_129.gif">
+                        <p align="center">Icon 129</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_130.gif">
+                        <p align="center">Icon 130</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_131.gif">
+                        <p align="center">Icon 131</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_132.gif">
+                        <p align="center">Icon 132</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_133.gif">
+                        <p align="center">Icon 133</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_134.gif">
+                        <p align="center">Icon 134</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_135.gif">
+                        <p align="center">Icon 135</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_136.gif">
+                        <p align="center">Icon 136</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_137.gif">
+                        <p align="center">Icon 137</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_138.gif">
+                        <p align="center">Icon 138</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_139.gif">
+                        <p align="center">Icon 139</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_140.gif">
+                        <p align="center">Icon 140</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_141.gif">
+                        <p align="center">Icon 141</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_142.gif">
+                        <p align="center">Icon 142</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_143.gif">
+                        <p align="center">Icon 143</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_144.gif">
+                        <p align="center">Icon 144</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_145.gif">
+                        <p align="center">Icon 145</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_146.gif">
+                        <p align="center">Icon 146</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_147.gif">
+                        <p align="center">Icon 147</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_148.gif">
+                        <p align="center">Icon 148</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_149.gif">
+                        <p align="center">Icon 149</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_150.gif">
+                        <p align="center">Icon 150</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_151.gif">
+                        <p align="center">Icon 151</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_152.gif">
+                        <p align="center">Icon 152</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_153.gif">
+                        <p align="center">Icon 153</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_154.gif">
+                        <p align="center">Icon 154</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_155.gif">
+                        <p align="center">Icon 155</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_156.gif">
+                        <p align="center">Icon 156</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_157.gif">
+                        <p align="center">Icon 157</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_158.gif">
+                        <p align="center">Icon 158</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_159.gif">
+                        <p align="center">Icon 159</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/15. Icons/Icon_160.gif">
+                        <p align="center">Icon 160</p>
+                    </div>
+        </div>
+
+
+    <div class="row">
+        <div class="large-12 columns">
+            <div class="section" id="16. Flags">
+                <h2>16. Flags</h2> 
+                <hr>
+                
+                <div class="subsection" id="16.1. Countries">
+                    <h3>16.1. Countries</h3>
+                    <hr>
+                </div>
+                
+            </div>
+        </div> 
+    </div>
+
+        <div class="row">
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Abkhazia.gif">
+                        <p align="center">Abkhazia</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Afghanistan.gif">
+                        <p align="center">Afghanistan</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Åland_Islands.gif">
+                        <p align="center">Åland Islands</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Albania.gif">
+                        <p align="center">Albania</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Algeria.gif">
+                        <p align="center">Algeria</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/American_Samoa.gif">
+                        <p align="center">American Samoa</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Andorra.gif">
+                        <p align="center">Andorra</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Angola.gif">
+                        <p align="center">Angola</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Anguilla.gif">
+                        <p align="center">Anguilla</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Antarctica.gif">
+                        <p align="center">Antarctica</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Antigua_and_Barbuda.gif">
+                        <p align="center">Antigua and Barbuda</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Argentina.gif">
+                        <p align="center">Argentina</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Armenia.gif">
+                        <p align="center">Armenia</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Aruba.gif">
+                        <p align="center">Aruba</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Australia.gif">
+                        <p align="center">Australia</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Austria.gif">
+                        <p align="center">Austria</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Azerbaijan.gif">
+                        <p align="center">Azerbaijan</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Azores.gif">
+                        <p align="center">Azores</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Bahamas.gif">
+                        <p align="center">Bahamas</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Bahrain.gif">
+                        <p align="center">Bahrain</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Balearic_Islands.gif">
+                        <p align="center">Baleariс Islands</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Bangladesh.gif">
+                        <p align="center">Bangladesh</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Barbados.gif">
+                        <p align="center">Barbados</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Basque.gif">
+                        <p align="center">Basque</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Belarus.gif">
+                        <p align="center">Belarus</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Belgium.gif">
+                        <p align="center">Belgium</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Belize.gif">
+                        <p align="center">Belize</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Benin.gif">
+                        <p align="center">Benin</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Bermuda.gif">
+                        <p align="center">Bermuda</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Bhutan.gif">
+                        <p align="center">Bhutan</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Bolivia.gif">
+                        <p align="center">Bolivia</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Bonaire.gif">
+                        <p align="center">Bonaire</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Bosnia_and_Herzegovina.gif">
+                        <p align="center">Bosnia and Herzegovina</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Botswana.gif">
+                        <p align="center">Botswana</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Bouvet_Island.gif">
+                        <p align="center">Bouvet Island</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Brazil.gif">
+                        <p align="center">Brazil</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/British_Columbia.gif">
+                        <p align="center">British Columbia</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/British_Indian_Ocean_Territory.gif">
+                        <p align="center">British Indian Ocean Territory</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/British_Virgin_Islands.gif">
+                        <p align="center">British Virgin Islands</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Brunei.gif">
+                        <p align="center">Brunei</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Bulgaria.gif">
+                        <p align="center">Bulgaria</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Burkina_Faso.gif">
+                        <p align="center">Burkina Faso</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Burundi.gif">
+                        <p align="center">Burundi</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Cambodia.gif">
+                        <p align="center">Cambodia</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Cameroon.gif">
+                        <p align="center">Cameroon</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Canada.gif">
+                        <p align="center">Canada</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Canary_Islands.gif">
+                        <p align="center">Canary Islands</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Cape_Verde.gif">
+                        <p align="center">Cape Verde</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Cayman_Islands.gif">
+                        <p align="center">Cayman Islands</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Central_African_Republic.gif">
+                        <p align="center">Central African Republic</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Ceuta.gif">
+                        <p align="center">Ceuta</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Chad.gif">
+                        <p align="center">Chad</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Chile.gif">
+                        <p align="center">Chile</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/China.gif">
+                        <p align="center">China</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Christmas_Island.gif">
+                        <p align="center">Christmas Island</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Cocos_Keeling_Islands.gif">
+                        <p align="center">Cocos (Keeling) Islands</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Colombia.gif">
+                        <p align="center">Colombia</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Comoros.gif">
+                        <p align="center">Comoros</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Cook_Islands.gif">
+                        <p align="center">Cook Islands</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Corsica.gif">
+                        <p align="center">Corsica</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Costa_Rica.gif">
+                        <p align="center">Costa Rica</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Côte_d'Ivoire_(Ivory_Coast).gif">
+                        <p align="center">Côte d'Ivoire (Ivory Coast)</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Croatia.gif">
+                        <p align="center">Croatia</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Cuba.gif">
+                        <p align="center">Cuba</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Cura_ao.gif">
+                        <p align="center">Curaçao</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Cyprus.gif">
+                        <p align="center">Cyprus</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Czech_Republic.gif">
+                        <p align="center">Czech Republic</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Democratic_Republic_of_Congo.gif">
+                        <p align="center">Democratic Republic of Congo</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Denmark.gif">
+                        <p align="center">Denmark</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Djibouti.gif">
+                        <p align="center">Djibouti</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Dominica.gif">
+                        <p align="center">Dominica</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Dominican_Republic.gif">
+                        <p align="center">Dominican Republic</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Ecuador.gif">
+                        <p align="center">Ecuador</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Egypt.gif">
+                        <p align="center">Egypt</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/EL_Salvador.gif">
+                        <p align="center">El Salvador</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/England.gif">
+                        <p align="center">England</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Equatorial_Guinea.gif">
+                        <p align="center">Equatorial Guinea</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Eritrea.gif">
+                        <p align="center">Eritrea</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Estonia.gif">
+                        <p align="center">Estonia</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Eswatini.gif">
+                        <p align="center">Eswatini</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Ethiopia.gif">
+                        <p align="center">Ethiopia</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Falkland_Islands.gif">
+                        <p align="center">Falkland Islands</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Faroe_Islands.gif">
+                        <p align="center">Faroe Islands</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Fiji.gif">
+                        <p align="center">Fiji</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Finland.gif">
+                        <p align="center">Finland</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/France.gif">
+                        <p align="center">France</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/French_Guiana.gif">
+                        <p align="center">French Guiana</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/French_Polynesia.gif">
+                        <p align="center">French Polynesia</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/French_Southern_and_Antarctic_Lands.gif">
+                        <p align="center">French Southern and Antarctic Lands</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Gabon.gif">
+                        <p align="center">Gabon</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Gambia.gif">
+                        <p align="center">Gambia</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Georgia.gif">
+                        <p align="center">Georgia</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Germany.gif">
+                        <p align="center">Germany</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Ghana.gif">
+                        <p align="center">Ghana</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Gibraltar.gif">
+                        <p align="center">Gibraltar</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Greece.gif">
+                        <p align="center">Greece</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Greenland.gif">
+                        <p align="center">Greenland</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Grenada.gif">
+                        <p align="center">Grenada</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Guadeloupe.gif">
+                        <p align="center">Guadeloupe</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Guam.gif">
+                        <p align="center">Guam</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Guatemala.gif">
+                        <p align="center">Guatemala</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Guernsey.gif">
+                        <p align="center">Guernsey</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Guinea_Bissau.gif">
+                        <p align="center">Guinea-Bissau</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Guinea.gif">
+                        <p align="center">Guinea</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Guyana.gif">
+                        <p align="center">Guyana</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Haiti.gif">
+                        <p align="center">Haiti</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Heard_Island_and_McDonald_Islands.gif">
+                        <p align="center">Heard Island and McDonald Islands</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Honduras.gif">
+                        <p align="center">Honduras</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Hong_Kong.gif">
+                        <p align="center">Hong Kong</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Hungary.gif">
+                        <p align="center">Hungary</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Iceland.gif">
+                        <p align="center">Iceland</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/India.gif">
+                        <p align="center">India</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Indonesia.gif">
+                        <p align="center">Indonesia</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Iran.gif">
+                        <p align="center">Iran</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Iraq.gif">
+                        <p align="center">Iraq</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Ireland.gif">
+                        <p align="center">Ireland</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Isle_of_Man.gif">
+                        <p align="center">Isle of Man</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Israel.gif">
+                        <p align="center">Israel</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Italy.gif">
+                        <p align="center">Italy</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Jamaica.gif">
+                        <p align="center">Jamaica</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Japan.gif">
+                        <p align="center">Japan</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Jersey.gif">
+                        <p align="center">Jersey</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Jordan.gif">
+                        <p align="center">Jordan</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Kazakhstan.gif">
+                        <p align="center">Kazakhstan</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Kenya.gif">
+                        <p align="center">Kenya</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Kiribati.gif">
+                        <p align="center">Kiribati</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Kosovo.gif">
+                        <p align="center">Kosovo</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Kuwait.gif">
+                        <p align="center">Kuwait</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Kyrgyzstan.gif">
+                        <p align="center">Kyrgyzstan</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Laos.gif">
+                        <p align="center">Laos</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Latvia.gif">
+                        <p align="center">Latvia</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Lebanon.gif">
+                        <p align="center">Lebanon</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Lesotho.gif">
+                        <p align="center">Lesotho</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Liberia.gif">
+                        <p align="center">Liberia</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Libya.gif">
+                        <p align="center">Libya</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Liechtenstein.gif">
+                        <p align="center">Liechtenstein</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Lithuania.gif">
+                        <p align="center">Lithuania</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Luxembourg.gif">
+                        <p align="center">Luxembourg</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Macau.gif">
+                        <p align="center">Macau</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Madagascar.gif">
+                        <p align="center">Madagascar</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Madeira.gif">
+                        <p align="center">Madeira</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Malawi.gif">
+                        <p align="center">Malawi</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Malaysia.gif">
+                        <p align="center">Malaysia</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Maldives.gif">
+                        <p align="center">Maldives</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Mali.gif">
+                        <p align="center">Mali</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Malta.gif">
+                        <p align="center">Malta</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Marshall_Islands.gif">
+                        <p align="center">Marshall Islands</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Martinique.gif">
+                        <p align="center">Martinique</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Mauritania.gif">
+                        <p align="center">Mauritania</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Mauritius.gif">
+                        <p align="center">Mauritius</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Mayotte.gif">
+                        <p align="center">Mayotte</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Melilla.gif">
+                        <p align="center">Melilla</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Mexico.gif">
+                        <p align="center">Mexico</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Micronesia.gif">
+                        <p align="center">Micronesia</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Moldova.gif">
+                        <p align="center">Moldova</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Monaco.gif">
+                        <p align="center">Monaco</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Mongolia.gif">
+                        <p align="center">Mongolia</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Montenegro.gif">
+                        <p align="center">Montenegro</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Montserrat.gif">
+                        <p align="center">Montserrat</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Morocco.gif">
+                        <p align="center">Morocco</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Mozambique.gif">
+                        <p align="center">Mozambique</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Myanmar.gif">
+                        <p align="center">Myanmar</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Namibia.gif">
+                        <p align="center">Namibia</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Nauru.gif">
+                        <p align="center">Nauru</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Nepal.gif">
+                        <p align="center">Nepal</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Netherlands.gif">
+                        <p align="center">Netherlands</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/New_Caledonia.gif">
+                        <p align="center">New Caledonia</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/New_Zealand.gif">
+                        <p align="center">New Zealand</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Nicaragua.gif">
+                        <p align="center">Nicaragua</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Niger.gif">
+                        <p align="center">Niger</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Nigeria.gif">
+                        <p align="center">Nigeria</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Niue.gif">
+                        <p align="center">Niue</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Norfolk_Island.gif">
+                        <p align="center">Norfolk Island</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/North_Korea.gif">
+                        <p align="center">North Korea</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/North_Macedonia.gif">
+                        <p align="center">North Macedonia</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/North_Ossetia.gif">
+                        <p align="center">North Ossetia</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Northern_Ireland.gif">
+                        <p align="center">Northern Ireland</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Northern_Mariana_Islands.gif">
+                        <p align="center">Northern Mariana Islands</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Norway.gif">
+                        <p align="center">Norway</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Oman.gif">
+                        <p align="center">Oman</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Orkney.gif">
+                        <p align="center">Orkney</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Pakistan.gif">
+                        <p align="center">Pakistan</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Palau.gif">
+                        <p align="center">Palau</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Palestine.gif">
+                        <p align="center">Palestine</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Panama.gif">
+                        <p align="center">Panama</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Papua_New_Guinea.gif">
+                        <p align="center">Papua New Guinea</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Paraguay.gif">
+                        <p align="center">Paraguay</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Peru.gif">
+                        <p align="center">Peru</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Philippines.gif">
+                        <p align="center">Philippines</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Pitcairn_Islands.gif">
+                        <p align="center">Pitcairn Islands</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Poland.gif">
+                        <p align="center">Poland</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Portugal.gif">
+                        <p align="center">Portugal</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Puerto_Rico.gif">
+                        <p align="center">Puerto Rico</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Qatar.gif">
+                        <p align="center">Qatar</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/R_union.gif">
+                        <p align="center">Réunion</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Rapa_Nui.gif">
+                        <p align="center">Rapa Nui</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Republic_of_the_Congo.gif">
+                        <p align="center">Republic of the Congo</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Romania.gif">
+                        <p align="center">Romania</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Russia.gif">
+                        <p align="center">Russia</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Rwanda.gif">
+                        <p align="center">Rwanda</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/S_o_Tom_and_Pr_ncipe.gif">
+                        <p align="center">São Tomé and Príncipe</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Saba.gif">
+                        <p align="center">Saba</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Saint_Barth_lemy.gif">
+                        <p align="center">Saint Barthélemy</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Saint_Helena_Ascension_and_Tristan_da_Cunha.gif">
+                        <p align="center">Saint Helena, Ascension and Tristan da Cunha</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Saint_Kitts_and_Nevis.gif">
+                        <p align="center">Saint Kitts and Nevis</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Saint_Lucia.gif">
+                        <p align="center">Saint Lucia</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Saint_Martin.gif">
+                        <p align="center">Saint Martin</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Saint_Pierre_and_Miquelon.gif">
+                        <p align="center">Saint Pierre and Miquelon</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Saint_Vincent_and_the_Grenadines.gif">
+                        <p align="center">Saint Vincent and the Grenadines</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Samoa.gif">
+                        <p align="center">Samoa</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/San_Marino.gif">
+                        <p align="center">San Marino</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Sardinia.gif">
+                        <p align="center">Sardinia</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Saudi_Arabia.gif">
+                        <p align="center">Saudi Arabia</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Scotland.gif">
+                        <p align="center">Scotland</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Senegal.gif">
+                        <p align="center">Senegal</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Serbia.gif">
+                        <p align="center">Serbia</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Seychelles.gif">
+                        <p align="center">Seychelles</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Sierra_Leone.gif">
+                        <p align="center">Sierra Leone</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Singapore.gif">
+                        <p align="center">Singapore</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Sint_Eustatius.gif">
+                        <p align="center">Sint Eustatius</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Sint_Maarten.gif">
+                        <p align="center">Sint Maarten</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Slovakia.gif">
+                        <p align="center">Slovakia</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Slovenia.gif">
+                        <p align="center">Slovenia</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Solomon_Islands.gif">
+                        <p align="center">Solomon Islands</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Somalia.gif">
+                        <p align="center">Somalia</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Somaliland.gif">
+                        <p align="center">Somaliland</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/South_Africa.gif">
+                        <p align="center">South Africa</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/South_Georgia.gif">
+                        <p align="center">South Georgia</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/South_Korea.gif">
+                        <p align="center">South Korea</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/South_Sudan.gif">
+                        <p align="center">South Sudan</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Spain.gif">
+                        <p align="center">Spain</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Sri_Lanka.gif">
+                        <p align="center">Sri Lanka</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Sudan.gif">
+                        <p align="center">Sudan</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Suriname.gif">
+                        <p align="center">Suriname</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Svalbard_and_Jan_Mayen.gif">
+                        <p align="center">Svalbard and Jan Mayen</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Sweden.gif">
+                        <p align="center">Sweden</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Switzerland.gif">
+                        <p align="center">Switzerland</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Syria.gif">
+                        <p align="center">Syria</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Taiwan.gif">
+                        <p align="center">Taiwan</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Tajikistan.gif">
+                        <p align="center">Tajikistan</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Tanzania.gif">
+                        <p align="center">Tanzania</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Thailand.gif">
+                        <p align="center">Thailand</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Tibet.gif">
+                        <p align="center">Tibet</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Timor_Leste.gif">
+                        <p align="center">Timor-Leste</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Togo.gif">
+                        <p align="center">Togo</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Tokelau.gif">
+                        <p align="center">Tokelau</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Tonga.gif">
+                        <p align="center">Tonga</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Transnistria.gif">
+                        <p align="center">Transnistria</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Trinidad_and_Tobago.gif">
+                        <p align="center">Trinidad and Tobago</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Tunisia.gif">
+                        <p align="center">Tunisia</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Turkey.gif">
+                        <p align="center">Turkey</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Turkish_Republic_of_Northern_Cyprus.gif">
+                        <p align="center">Turkish Republic of Northern Cyprus</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Turkmenistan.gif">
+                        <p align="center">Turkmenistan</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Turks_and_Caicos_Islands.gif">
+                        <p align="center">Turks and Caicos Islands</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Tuvalu.gif">
+                        <p align="center">Tuvalu</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Uganda.gif">
+                        <p align="center">Uganda</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Ukraine.gif">
+                        <p align="center">Ukraine</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/United_Arab_Emirates.gif">
+                        <p align="center">United Arab Emirates</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/United_Kingdom.gif">
+                        <p align="center">United Kingdom</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/United_States_Minor_Outlying_Islands.gif">
+                        <p align="center">United States Minor Outlying Islands</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/United_States_Virgin_Islands.gif">
+                        <p align="center">United States Virgin Islands</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/United_States.gif">
+                        <p align="center">United States</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Uruguay.gif">
+                        <p align="center">Uruguay</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Uzbekistan.gif">
+                        <p align="center">Uzbekistan</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Vanuatu.gif">
+                        <p align="center">Vanuatu</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Vatican_City_(Holy_See).gif">
+                        <p align="center">Vatican City (Holy See)</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Venezuela.gif">
+                        <p align="center">Venezuela</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Vietnam.gif">
+                        <p align="center">Vietnam</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Wales.gif">
+                        <p align="center">Wales</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Wallis_and_Futuna.gif">
+                        <p align="center">Wallis and Futuna</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Western_Sahara.gif">
+                        <p align="center">Western Sahara</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Yemen.gif">
+                        <p align="center">Yemen</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Zambia.gif">
+                        <p align="center">Zambia</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.1. Countries/Zimbabwe.gif">
+                        <p align="center">Zimbabwe</p>
+                    </div>
+        </div>
+
+              
+    <div class="row">
+        <div class="large-12 columns">
+            <div class="section" id="16. Flags">
+                <div class="subsection" id="16.2. US States">
+                    <h3>16.2. US States</h3>
+                    <hr>
+                </div>
+                
+            </div>
+        </div> 
+    </div>
+  
+        <div class="row">
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.2. US States/Alabama.gif">
+                        <p align="center">Alabama</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.2. US States/Alaska.gif">
+                        <p align="center">Alaska</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.2. US States/Arizona.gif">
+                        <p align="center">Arizona</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.2. US States/Arkansas.gif">
+                        <p align="center">Arkansas</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.2. US States/California.gif">
+                        <p align="center">California</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.2. US States/Colorado.gif">
+                        <p align="center">Colorado</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.2. US States/Connecticut.gif">
+                        <p align="center">Connecticut</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.2. US States/Delaware.gif">
+                        <p align="center">Delaware</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.2. US States/Florida.gif">
+                        <p align="center">Florida</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.2. US States/Georgia.gif">
+                        <p align="center">Georgia</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.2. US States/Hawaii.gif">
+                        <p align="center">Hawaii</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.2. US States/Idaho.gif">
+                        <p align="center">Idaho</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.2. US States/Illinois.gif">
+                        <p align="center">Illinois</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.2. US States/Indiana.gif">
+                        <p align="center">Indiana</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.2. US States/Iowa.gif">
+                        <p align="center">Iowa</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.2. US States/Kansas.gif">
+                        <p align="center">Kansas</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.2. US States/Kentucky.gif">
+                        <p align="center">Kentucky</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.2. US States/Louisiana.gif">
+                        <p align="center">Louisiana</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.2. US States/Maine.gif">
+                        <p align="center">Maine</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.2. US States/Maryland.gif">
+                        <p align="center">Maryland</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.2. US States/Massachusetts.gif">
+                        <p align="center">Massachusetts</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.2. US States/Michigan.gif">
+                        <p align="center">Michigan</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.2. US States/Minnesota.gif">
+                        <p align="center">Minnesota</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.2. US States/Mississippi.gif">
+                        <p align="center">Mississippi</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.2. US States/Missouri.gif">
+                        <p align="center">Missouri</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.2. US States/Montana.gif">
+                        <p align="center">Montana</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.2. US States/Nebraska.gif">
+                        <p align="center">Nebraska</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.2. US States/Nevada.gif">
+                        <p align="center">Nevada</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.2. US States/New_Hampshire.gif">
+                        <p align="center">New Hampshire</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.2. US States/New_Jersey.gif">
+                        <p align="center">New Jersey</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.2. US States/New_Mexico.gif">
+                        <p align="center">New Mexico</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.2. US States/New_York.gif">
+                        <p align="center">New York</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.2. US States/North_Carolina.gif">
+                        <p align="center">North Carolina</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.2. US States/North_Dakota.gif">
+                        <p align="center">North Dakota</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.2. US States/Ohio.gif">
+                        <p align="center">Ohio</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.2. US States/Oklahoma.gif">
+                        <p align="center">Oklahoma</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.2. US States/Oregon.gif">
+                        <p align="center">Oregon</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.2. US States/Pennsylvania.gif">
+                        <p align="center">Pennsylvania</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.2. US States/Rhode_Island.gif">
+                        <p align="center">Rhode Island</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.2. US States/South_Carolina.gif">
+                        <p align="center">South Carolina</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.2. US States/South_Dakota.gif">
+                        <p align="center">South Dakota</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.2. US States/Tennessee.gif">
+                        <p align="center">Tennessee</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.2. US States/Texas.gif">
+                        <p align="center">Texas</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.2. US States/Utah.gif">
+                        <p align="center">Utah</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.2. US States/Vermont.gif">
+                        <p align="center">Vermont</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.2. US States/Virginia.gif">
+                        <p align="center">Virginia</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.2. US States/Washington.gif">
+                        <p align="center">Washington</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.2. US States/West_Virginia.gif">
+                        <p align="center">West Virginia</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.2. US States/Wisconsin.gif">
+                        <p align="center">Wisconsin</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.2. US States/Wyoming.gif">
+                        <p align="center">Wyoming</p>
+                    </div>
+        </div>
+
+    <div class="row">
+        <div class="large-12 columns">
+            <div class="section" id="16. Flags">
+                <div class="subsection" id="16.3. Organizations">
+                    <h3>16.3. Organizations</h3>
+                    <hr>
+                </div>
+                
+            </div>
+        </div> 
+    </div>
+  
+        <div class="row">
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.3. Organizations/African_Union.gif">
+                        <p align="center">African Union</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.3. Organizations/Arab_League.gif">
+                        <p align="center">Arab League</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.3. Organizations/Association_of_Southeast_Asian_Nations.gif">
+                        <p align="center">Association of Southeast Asian Nations</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.3. Organizations/Caribbean_Community.gif">
+                        <p align="center">Caribbean Community</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.3. Organizations/Central_American_Integration_System.gif">
+                        <p align="center">Central American Integration System</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.3. Organizations/Collective_Security_Treaty_Organization.gif">
+                        <p align="center">Collective Security Treaty Organization</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.3. Organizations/Commonwealth_of_Independent_States.gif">
+                        <p align="center">Commonwealth of Independent States</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.3. Organizations/Commonwealth_of_Nations.gif">
+                        <p align="center">Commonwealth of Nations</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.3. Organizations/East_African_Community.gif">
+                        <p align="center">East African Community</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.3. Organizations/Eurasian_Economic_Union.gif">
+                        <p align="center">Eurasian Economic Union</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.3. Organizations/European_Union.gif">
+                        <p align="center">European Union</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.3. Organizations/Gulf_Cooperation_Council.gif">
+                        <p align="center">Gulf Cooperation Council</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.3. Organizations/NATO.gif">
+                        <p align="center">NATO</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.3. Organizations/Nordic_Council.gif">
+                        <p align="center">Nordic Council</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.3. Organizations/OPEC.gif">
+                        <p align="center">OPEC</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.3. Organizations/Organisation_internationale_de_la_Francophonie.gif">
+                        <p align="center">Organisation internationale de la Francophonie</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.3. Organizations/Organisation_of_Islamic_Cooperation.gif">
+                        <p align="center">Organisation of Islamic Cooperation</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.3. Organizations/Organization_of_American_States.gif">
+                        <p align="center">Organization of American States</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.3. Organizations/Pacific_Community.gif">
+                        <p align="center">Pacific Community</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.3. Organizations/Southern_African_Development_Community.gif">
+                        <p align="center">Southern African Development Community</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.3. Organizations/Turkic_Council.gif">
+                        <p align="center">Turkic Council</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.3. Organizations/Union_of_South_American_Nations.gif">
+                        <p align="center">Union of South American Nations</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/16. Flags/16.3. Organizations/United_Nations.gif">
+                        <p align="center">United Nations</p>
+                    </div>
+        </div>
+
+    <div class="row">
+        <div class="large-12 columns">
+            <div class="section" id="17. Elements">
+                <h2>17. Elements</h2> 
+                <hr>
+                
+                <div class="subsection" id="17.1. Counters Elements">
+                    <h3>17.1. Counters Elements</h3>
+                    <hr>
+                </div>
+                
+            </div>
+        </div> 
+    </div>
+    
+        <div class="row">
+                    <div class="large-4 columns">
+                        <img src="./GIF/17. Elements/17.1. Counters Elements/Counter_Element_01.gif">
+                        <p align="center">Counter Element 01</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/17. Elements/17.1. Counters Elements/Counter_Element_02.gif">
+                        <p align="center">Counter Element 02</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/17. Elements/17.1. Counters Elements/Counter_Element_03.gif">
+                        <p align="center">Counter Element 03</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/17. Elements/17.1. Counters Elements/Counter_Element_04.gif">
+                        <p align="center">Counter Element 04</p>
+                    </div>
+        </div>
+
+    <div class="row">
+        <div class="large-12 columns">
+            <div class="section" id="17. Elements">
+                <div class="subsection" id="17.2. Percents Elements">
+                    <h3>17.2. Percents Elements</h3>
+                    <hr>
+                </div>
+                
+            </div>
+        </div> 
+    </div>
+    
+        <div class="row">
+                    <div class="large-4 columns">
+                        <img src="./GIF/17. Elements/17.2. Percents Elements/Percent_Element_01.gif">
+                        <p align="center">Percent Element 01</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/17. Elements/17.2. Percents Elements/Percent_Element_02.gif">
+                        <p align="center">Percent Element 02</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/17. Elements/17.2. Percents Elements/Percent_Element_03.gif">
+                        <p align="center">Percent Element 03</p>
+                    </div>
+        </div>
+
+    <div class="row">
+        <div class="large-12 columns">
+            <div class="section" id="17. Elements">
+                <div class="subsection" id="17.3. Timers Elements">
+                    <h3>17.3. Timers Elements</h3>
+                    <hr>
+                </div>
+                
+            </div>
+        </div> 
+    </div>
+    
+        <div class="row">
+                    <div class="large-4 columns">
+                        <img src="./GIF/17. Elements/17.3. Timers Elements/Timer_Element_01.gif">
+                        <p align="center">Timer Element 01</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/17. Elements/17.3. Timers Elements/Timer_Element_02.gif">
+                        <p align="center">Timer Element 02</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/17. Elements/17.3. Timers Elements/Timer_Element_03.gif">
+                        <p align="center">Timer Element 03</p>
+                    </div>
+        </div>
+
+    <div class="row">
+        <div class="large-12 columns">
+            <div class="section" id="17. Elements">
+                <div class="subsection" id="17.4. Pins">
+                    <h3>17.4. Pins</h3>
+                    <hr>
+                </div>
+                
+            </div>
+        </div> 
+    </div>
+    
+        <div class="row">
+                    <div class="large-4 columns">
+                        <img src="./GIF/17. Elements/17.4. Pins/Pin_01.gif">
+                        <p align="center">Pin 01</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/17. Elements/17.4. Pins/Pin_02.gif">
+                        <p align="center">Pin 02</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/17. Elements/17.4. Pins/Pin_03.gif">
+                        <p align="center">Pin 03</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/17. Elements/17.4. Pins/Pin_04.gif">
+                        <p align="center">Pin 04</p>
+                    </div>
+        </div>
+
+    <div class="row">
+        <div class="large-12 columns">
+            <div class="section" id="17. Elements">
+                <div class="subsection" id="17.5. Glass BG">
+                    <h3>17.5. Glass BG</h3>
+                    <hr>
+                </div>
+                
+            </div>
+        </div> 
+    </div>
+    
+        <div class="row">
+                    <div class="large-4 columns">
+                        <img src="./GIF/17. Elements/17.5. Glass BG/Glass_BG_01.gif">
+                        <p align="center">Glass BG 01</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/17. Elements/17.5. Glass BG/Glass_BG_02.gif">
+                        <p align="center">Glass BG 02</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/17. Elements/17.5. Glass BG/Glass_BG_03.gif">
+                        <p align="center">Glass BG 03</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/17. Elements/17.5. Glass BG/Glass_BG_04.gif">
+                        <p align="center">Glass BG 04</p>
+                    </div>
+        </div>
+
+    <div class="row">
+        <div class="large-12 columns">
+            <div class="section" id="17. Elements">
+                <div class="subsection" id="17.6. Miscellaneous">
+                    <h3>17.6. Miscellaneous</h3>
+                    <hr>
+                </div>
+                
+            </div>
+        </div> 
+    </div>
+    
+        <div class="row">
+                    <div class="large-4 columns">
+                        <img src="./GIF/17. Elements/17.6. Miscellaneous/Logo_Element_01.gif">
+                        <p align="center">Logo Element 01</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/17. Elements/17.6. Miscellaneous/Map_Element_01.gif">
+                        <p align="center">Map Element 01</p>
+                    </div>
+                    <div class="large-4 columns">
+                        <img src="./GIF/17. Elements/17.6. Miscellaneous/Planet_Element_01.gif">
+                        <p align="center">Planet Element 01</p>
+                    </div>
+        </div>
+
+</div>
+</body>
+</html>
